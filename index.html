@@ -1,789 +1,273 @@
-html {
-    font-size: 100%;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0; /* Svetlošedé pozadie pre celý web */
-}
-
-.container {
-    max-width: 50em;
-    margin: 0 auto;
-    padding: 0 1.25em;
-}
-
-h1, h2 {
-    margin-bottom: 1.25em;
-}
-
-section {
-    max-width: 50em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1.25em; /* Vytvorenie priestoru medzi sekciami */
-    padding: 1.25em; /* Padding pre oddelenie obsahu */
-    border-radius: 0.625em; /* Zaoblenie rohov */
-    background-color: white; /* Biele pozadie pre sekcie */
-    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Jemný tieň */
-}
-
-.about, .services, .hours, .pricing {
-    background-color: #f9f9f9; /* Svetlá farba pozadia */
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fixni PC - Servis a oprava počítačov</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/353e41ed59.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="/assets/66ce0d3f7aafdccbd0aad480_FixniPC2.png" alt="Logo" class="logo" />
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#about" class="scroll-link">O nás</a></li>
+                    <li><a href="#services" class="scroll-link">Služby</a></li>
+                    <li><a href="#pricing" class="scroll-link">Cenník</a></li>
+                    <li><a href="#hours" class="scroll-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     
-}
-
-
-/* Header */
-
-.header {
-    padding-bottom: 2.5em;
-    position: relative; /* Umožňuje absolútne pozicionovanie detí */
-    height: 5em; /* Nastavte výšku hlavičky na požadovanú hodnotu */
-    overflow: hidden; /* Skrytie prekrytej časti loga */
-    background-color: #4caf50; /* Pozadie hlavičky */
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between; /* Rozloženie medzi logom a navigáciou */
-    align-items: center; /* Vertikálne zarovnanie */
-    max-width: 51.25em; /* Maximálna šírka headeru */
-    margin: 0 auto; /* Centrovanie */
-    padding: 0 1.25em; /* Padding okolo containeru */
-}
-
-/* Logo */
-
-.logo {
-    max-width: 12.5em; /* Maximálna šírka loga */
-    max-height: 7.5em; /* Maximálna výška loga (zodpovedá výške hlavičky) */
-    height: auto; /* Zachovanie pomeru strán */
-}
-
-/* Navbar */
-/* Základný štýl pre hamburger menu */
-.hamburger {
-    display: none; /* Skryť na väčších obrazovkách */
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-}
-
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.navigation li {
-    margin: 0 0.9375em;
-}
-
-.navigation a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navigation a:hover {
-    text-decoration: underline;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 5px 0;
-}
-
-/* Skrytie navigácie na menších obrazovkách */
-@media (max-width: 768px) {
-    .navigation {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #333;
-        position: absolute;
-        top: 5em; /* Presne pod headerom */
-        left: 0;
-        width: 100%;
-        z-index: 10;
-    }  
-}
-
-/* About */
-.about-section {
-    background-color: #f9f9f9; /* Svetlé pozadie sekcie */
-    padding: 0 0 0 2.5em; /* Odstránenie paddingu z celej sekcie */
-}
-
-.about-content {
-    display: flex; /* Flexbox pre zarovnanie textu a obrázka */
-    align-items: stretch; /* Rozťahovanie na plnú výšku kontajnera */
-    max-width: 50em; /* Maximálna šírka kontajnera */
-    margin: 0 auto; /* Centrovanie */
-}
-
-.about-text {
-    flex: 1; /* Text zaberá polovicu priestoru */
-    padding: 2.5em 2.5em 2.5em 0; /* Vnútorný padding pre text */
-    color: #333; /* Tmavšia farba textu */
-}
-
-.about-text h2 {
-    font-size: 1.75em; /* Veľkosť nadpisu */
-    color: #388e3c; /* Tmavá zelená pre nadpis */
-    margin-bottom: 1.25em; /* Priestor pod nadpisom */
-}
-
-.about-text p {
-    margin-bottom: 1.25em; /* Priestor medzi odstavcami */
-    line-height: 1.6; /* Zlepšenie čitateľnosti */
-    font-size: 1em; /* Veľkosť textu */
-}
-
-.about-image {
-    margin-right: -1.25em;
-    flex: 1; /* Obrázok zaberá polovicu priestoru */
-    overflow: hidden; /* Skrytie prebytočnej časti obrázka, ak existuje */
-    border-top-right-radius: 0.625em;
-    border-bottom-right-radius: 0.625em;
-
-}
-
-.about-image img {
-    max-width: 100%; /* Obrázok sa prispôsobí dostupnému priestoru */
-    height: 100%; /* Zabezpečíme, že obrázok pokryje celú výšku kontajnera */
-    object-fit: cover; /* Zabezpečíme, že obrázok bude pokrývať celú plochu */
-}
-
-
-/* Responzívny dizajn */
-@media (max-width: 37.5em) {
-    .about-section {
-        padding: 0em; /* Odstránenie paddingu z celej sekcie */
-    }
-    .about-content {
-        flex-direction: column; /* Obrázok a text sa zoradia pod seba */
-        align-items: center; /* Zarovnanie na stred */
-    }
-
-    .about-text {
-        padding: 1.25em; /* Odstránenie paddingu na menších obrazovkách */
-        text-align: center; /* Centrovanie textu */
-    }
-
-    .about-image {
-        width: 100%; /* Obrázok bude mať 100% šírku */
-        margin-top: 1.25em; /* Priestor medzi textom a obrázkom */
-        border-radius: 0;
-        padding: 0;
-        margin: 1em 0 -0.3125em 0;
-    }
-
-    .container {
-        padding: 0em;
-    }
-}
-
-
-/* Buttons */
-
-.button {
-    display: inline-block; /* Zobrazí ako blokový element */
-    margin-top: 3.125em; /* Priestor nad tlačidlom */
-    padding: 0.75em 1.5625em; /* Padding pre tlačidlo */
-    background-color: #4caf50; /* Zelená farba pre tlačidlo */
-    color: white; /* Farba textu */
-    border: none; /* Bez orámovania */
-    border-radius: 1.5625em; /* Zaoblené rohy */
-    text-decoration: none; /* Bez podčiarknutia */
-    font-weight: bold; /* Tučný text pre tlačidlo */
-    font-size: 1em; /* Veľkosť písma */
-    transition: background-color 0.3s, transform 0.3s; /* Prechod farby a transformácie */
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Jemný tieň */
-}
-
-.button:hover {
-    background-color: #388e3c; /* Tmavšia zelená pri hover */
-    transform: translateY(-0.125em); /* Mierny pohyb tlačidla pri hover */
-}
-
-/* Media Queries pre responsívny dizajn */
-@media (max-width: 52.5em) {
-    .button {
-        padding: 1em 1.25em; /* Zmenšenie paddingu */
-        margin-top: 0.625em; /* Zmenšenie marginu nad tlačidlom */
-        margin-left: 0.3125em; /* Zmenšenie marginu na ľavej strane pre tlačidlo-2 */
-    }
-}
-
-@media (max-width: 30em) {
-    .button {
-        padding: 1em 1.25em; /* Ďalšie zmenšenie paddingu */
-        font-size: 1em;/* Ďalšie zmenšenie veľkosti písma */
-        margin-top: 0.625em; /* Ďalšie zmenšenie marginu nad tlačidlom */
-        margin-left: 0; /* Zmenšenie marginu na ľavej strane pre tlačidlo-2 */
-    }
-}
-
-
-
-/* Services */
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15.625em, 1fr)); /* Responzívne stĺpce */
-    gap: 0.875em;
-    margin: 1.875em 0;
-}
-
-.service {
-    background-color: #e8f5e9; /* Svetlozelená pre služby */
-    padding: 1.25em;
-    border-radius: 0.625em;
-    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Jemný tieň */
-    text-align: center;
-}
-
-.service i {
-    font-size: 1.875em;
-    color: #388e3c;
-    margin-bottom: 0.625em;
-}
-
-.services h2 {
-    text-align: center;
-    font-size: 1.75em;
-    color: #2f572f; /* Tmavšia zelená pre nadpis */
-}
-
-.service h3 {
-    margin-bottom: 0.3125em;
-    color: #2f572f; /* Tmavšia zelená pre názov služby */
-}
-
-.service p {
-    font-size: 0.875em;
-    color: #2e7d32; /* Farba textu */
-}
-
-.service:hover {
-    background-color: #c8e6c9; /* Zmena pozadia pri hover */
-}
-
-
-/* Process Section */
-
-.process-section {
-    background-color: #e8f5e9; /* Svetlozelené pozadie pre sekciu */
-    padding: 2.5em 1.25em; /* Padding okolo sekcie */
-    text-align: left;
-}
-
-.process-section h2 {
-    text-align: center;
-    color: #388e3c; /* Zelená farba pre nadpis */
-    font-size: 1.75em;
-    margin-bottom: 2.5em;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75em, 1fr)); /* Responzívne stĺpce */
-    gap: 1.875em; /* Priestor medzi krokmi */
-}
-
-.step {
-    background-color: white;
-    border-radius: 0.625em;
-    padding: 1.25em;
-    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1); /* Jemný tieň */
-}
-
-.step h3 {
-    font-size: 1.25em;
-    color: #388e3c; /* Zelená farba pre nadpisy krokov */
-    margin-bottom: 0.625em;
-}
-
-.step p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
-}
-
-a[href="#contact"] {
-    color: #4caf50; /* Nastaví zelenú farbu pre odkaz */
-    text-decoration: none; /* Odstráni podčiarknutie */
-    font-weight: bold; /* Prípadne môžeš nastaviť tučné písmo, ak chceš */
-}
-
-a[href="#contact"]:hover {
-    color: #388e3c; /* Zmena farby pri hover na tmavšiu zelenú */
-}
-
-
-/* Hours */
-
-.hours {
-    background-color: #e8f5e9; /* Svetlozelené pozadie */
-    padding: 3.125em 1.25em; /* Zväčšenie paddingu */
-    text-align: center;
-}
-
-.hours h2 {
-    margin-bottom: 2.5em;
-    color: #2f572f; /* Tmavšia zelená pre nadpis */
-    font-size: 1.75em;
-    font-weight: bold;
-}
-
-.hours-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.875em;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 75em;
-}
-
-.hours-item {
-    background-color: white;
-    border-radius: 0.625em;
-    padding: 1.25em;
-    width: 100%;
-    max-width: 17.5em;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hours-item:hover {
-    transform: translateY(-0.3125em);
-    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.2);
-}
-
-.hours-item h3 {
-    margin-bottom: 0.875em;
-    font-size: 1.375em;
-    color: #388e3c;
-    font-weight: bold;
-}
-
-.hours-item p {
-    margin: 0.3125em 0;
-    font-size: 1em;
-    color: #2e7d32;
-}
-
-.hours-item a {
-    color: #4caf50;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hours-item a:hover {
-    text-decoration: underline;
-}
-
-.hours-item i {
-    margin-bottom: 0.9375em;
-    display: block;
-    font-size: 1.875em;
-    color: #388e3c;
-}
-
-/* Pickup Location */
-.pickup-location {
-    background-color: white;
-    border-radius: 0.625em;
-    padding: 1.875em;
-    margin-top: 2.5em;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
-}
-
-.pickup-location h3 {
-    color: #388e3c;
-    margin-bottom: 1.25em;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.pickup-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Zarovná obsah na stred */
-    margin-bottom: 0.9375em;
-    background-color: #f5f5f5;
-    border-radius: 0.5em;
-    padding: 0.9375em;
-    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.pickup-item:hover {
-    transform: translateY(-0.1875em);
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.15);
-}
-
-.pickup-item p {
-    margin: 0;
-    color: #555;
-    font-size: 1em;
-    flex-grow: 1; /* Aby text vyplnil priestor */
-    display: flex; /* Použitie flexu pre ikonu a text */
-    align-items: center; /* Vertikálne zarovnanie */
-    justify-content: center; /* Zarovná text do stredu */
-}
-
-.pickup-item i {
-    margin-right: 0.9375em;
-    font-size: 1.625em;
-    color: #555;
-}
-
-.pickup-item a {
-    display: flex; /* Použitie flexu pre ikonu a text */
-    align-items: center; /* Vertikálne zarovnanie */
-    text-decoration: none; /* Bez podčiarknutia */
-    width: 100%; /* Aby vyplnil celý riadok */
-}
-
-.pickup-item a:hover {
-    color: #4caf50; /* Zelená farba pre odkaz pri hover */
-}
-
-.pickup-item a i.fa-map-marker-alt {
-    margin-left: 0.625em; /* Priestor medzi adresou a ikonou */
-    font-size: 1.25em; /* Veľkosť ikony */
-    color: #4caf50; /* Zelená farba pre ikonu */
-}
-
-
-/* Pricing */
-
-.pricing {
-    background-color: #f9f9f9; 
-    padding: 1.875em 1.25em;
-    text-align: left;
-  }
-  
-  .pricing h2 {
-    font-size: 1.75em;
-    margin-bottom: 0;
-    text-align: center;
-    color: #2f572f; /* Tmavšia zelená pre nadpis */
-  }
-  
-  .pricing-vat {
-    font-size: 0.875em;
-    color: #888; /* Jemná šedá farba pre DPH informáciu */
-    margin-bottom: 1.25em; /* Priestor pod textom pred tabuľkou */
-    text-align: right;
-}
-  
-  .pricing-table {
-    width: 100%;
-    max-width: 50em;
-    margin: 0 auto;
-    border-collapse: collapse; 
-    background-color: white;
-    box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1);
-    border-radius: 0.625em;
-    overflow: hidden;
-  }
-  
-  .pricing-table thead {
-    background: linear-gradient(to right, #388e3c, #2e7d32); /* Gradient */
-    color: white;
-  }
-  
-  .pricing-table th, .pricing-table td {
-    padding: 0.9375em;
-    text-align: left;
-  }
-  
-  .pricing-table th {
-    font-size: 1.125em;
-    font-weight:normal;
-    text-transform: uppercase;
-    border-bottom: 0.125em solid #2e7d32; 
-  }
-  
-  .pricing-table tbody tr {
-    border-bottom: 0.0625em solid #ddd;
-  }
-  
-  .pricing-table tbody tr:nth-child(even) {
-    background-color: #f5f5f5; /* Svetlošedá */
-  }
-  
-  .pricing-table tbody tr:hover {
-    background-color: #f9f9f9; /* Svetlejšia šedá */
-    transform: scale(1.02); /* Jemné zväčšenie */
-    box-shadow: 0 0.25em 0.9375em rgba(0, 0, 0, 0.1); /* Zmena tieňa */
-  }
-  
-  .pricing-table td {
-    font-size: 1em;
-    color: #555;
-  }
-  
-  .pricing-table td:last-child {
-    text-align: right;
-    font-weight: bold;
-    color: #388e3c;
-  }
-
-  .pricing-note {
-    margin-top: 1.25em;
-    font-size: 1em;
-    color: #555; /* Jemná šedá farba */
-    background-color: #f9f9f9; /* Svetlé pozadie pre zvýraznenie */
-    padding: 0.625em;
-    border-left: 0.25em solid #4caf50; /* Zelený okraj pre zvýraznenie */
-}
-
-  
-  @media (max-width: 37.5em) {
-    .pricing-table th, .pricing-table td {
-      padding: 0.625em;
-      font-size: 0.875em;
-    }
-  }
-
-
-/* Doprava a vyzdvihnutie */
-
-.service-options {
-    background-color: #f9f9f9; /* Jemne zelené pozadie */
-    padding: 1.875em 1.25em;
-    text-align: center;
-    border-radius: 0.625em; /* Zaoblené rohy */
-    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Jemný tieň */
-    margin-top: 1.25em; /* Medzera nad sekciou */
-}
-
-.service-options h2 {
-    margin-bottom: 1.875em;
-    text-align: center;
-    color: #2f572f; /* Tmavá zelená pre nadpis */
-    font-size: 1.75em; /* Zvýšená veľkosť písma pre nadpis */
-    font-weight: bold; /* Zvýraznenie nadpisu */
-}
-
-.service-options p {
-    margin-bottom: 1.25em;
-    font-size: 1em;
-    color: #444; /* Tmavšia farba textu pre lepšiu čitateľnosť */
-}
-
-.service-options ul {
-    list-style: none; /* Bez bodiek */
-    padding: 0;
-}
-
-.service-options ul li {
-    margin: 0.625em 0; /* Priestor medzi položkami */
-    font-size: 1em;
-    color: #555; /* Jemnejšia farba textu */
-    padding: 0.625em; /* Padding pre položky */
-    border-radius: 0.3125em; /* Zaoblenie rohov položiek */
-    transition: background-color 0.3s; /* Prechod farby pri hover */
-}
-
-.service-options ul li:hover {
-    background-color: #c8e6c9; /* Zmena pozadia pri hover */
-}
-
-.service-options strong {
-    color: #388e3c; /* Tmavšia zelená pre zvýraznené texty */
-}
-
-
-/* Form */
-
-.contact {
-    background-color: #e8f5e9; /* Svetlá farba pozadia pre formulár */ 
-    padding: 1.875em 1.25em;
-    text-align: center;
-    margin-bottom: 3.125em;
-}
-
-.contact h2 {
-    margin-bottom: 1.875em;
-    text-align: center;
-    color: #2f572f; /* Tmavšia zelená pre nadpis */
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrovanie položiek */
-}
-
-form label {
-    margin-bottom: 0.3125em;
-    font-weight: normal;
-    align-items: left;
-    text-align: left; /* Zarovnanie textu naľavo */
-    color: #2e7d32; /* Farba popisu */
-}
-
-form input, form textarea {
-    width: 100%; /* Šírka vstupov */
-    max-width: 26.25em; /* Maximálna šírka pre väčšie obrazovky */
-    padding: 0.625em;
-    margin-bottom: 1.25em;
-    border: 0.0625em solid #ccc;
-    border-radius: 0.3125em; /* Zaoblenie rohov */
-}
-
-form textarea {
-    height: 9.375em; /* Výška textového poľa pre správu */
-}
-
-form input:focus, form textarea:focus {
-    border-color: #388e3c; /* Zelený okraj pri zaostrení */
-    outline: none; /* Odstránenie defaultného rámčeka */
-}
-
-form button {
-    width: calc(100% + 1.25em); /* Zabezpečí, že tlačidlo bude širšie o extra 1.25em */
-    max-width: 27.5em; /* Zhodná šírka ako textové pole */
-    background-color: #4caf50; /* Zelená farba tlačidla */
-    color: white;
-    border: none;
-    padding: 0.75em 1.5625em; /* Padding pre zväčšenie tlačidla */
-    border-radius: 0.3125em; /* Zaoblenie rohov */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Prechod farby */
-}
-
-form button:hover {
-    background-color: #388e3c; /* Tmavšia zelená pri najazdení myšou */
-}
-
-form p {
-    font-size: 0.875em;
-    color: #888; /* Jemná farba pre informácie */
-}
-
-/* Responzívny dizajn */
-@media (max-width: 30em) {
-    form input, form textarea {
-        max-width: 100%; /* Na menších obrazovkách zaberie tlačidlo plnú šírku */
-    }
-}
-
-
-/* Footer */
-
-footer {
-    background-color: #4caf50; /* Tmavšia zelená pre footer */
-    color: white;
-    text-align: center;
-    padding: 2.5em 0; /* Zvýšenie paddingu pre viac priestoru */
-    margin-top: 1.25em;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 1.25em 0;
-}
-
-.footer-links li {
-    display: inline-block;
-    margin: 0 0.9375em; /* Priestor medzi linkami */
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
-    transition: color 0.3s ease; /* Jemný prechod farby */
-}
-
-.footer-links a:hover {
-    color: #a5d6a7; /* Svetlejšia zelená pri hover */
-    text-decoration: underline; /* Podčiarknutie pri najazdení */
-}
-
-footer a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin: 0.625em 0;
-    font-size: 0.875em;
-    color: #c8e6c9; /* Svetlejšia zelená pre text */
-}
-
-
-/* Scroll to top */
-
-.scroll-to-top {
-    position: fixed; /* Fixná pozícia na obrazovke */
-    bottom: 1.875em; /* Vzdialenosť od spodku */
-    right: 1.875em; /* Vzdialenosť od pravej strany */
-    width: 3.125em; /* Šírka tlačidla */
-    height: 3.125em; /* Výška tlačidla */
-    border-radius: 50%; /* Zaoblenie na 100%, aby bolo okrúhle */
-    background-color: #4caf50; /* Zelená farba pozadia */
-    color: white; /* Biely text */
-    border: none; /* Bez okrajov */
-    cursor: pointer; /* Ukazovateľ pri hover */
-    font-size: 1.5em; /* Veľkosť šípky */
-    display: flex; /* Použitie flexboxu */
-    justify-content: center; /* Horizontálne centrovanie */
-    align-items: center; /* Vertikálne centrovanie */
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Jemný tieň */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Prechod farby a tieňa */
-    display: none; /* Skryté predtým, než sa začne scrollovať */
-}
-
-.scroll-to-top:hover {
-    background-color: #388e3c; /* Tmavšia zelená pri hover */
-    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3); /* Vylepšený tieň pri hover */
-}
-
-/* Responzívny dizajn */
-@media (max-width: 37.5em) {
-    .scroll-to-top{
-        bottom: 1.2em; /* Vzdialenosť od spodku */
-        right: 1.2em; /* Vzdialenosť od pravej strany */
-        width: 2.125em; /* Šírka tlačidla */
-        height: 2.125em; /* Výška tlačidla */
-    }
-}
-
-
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>O nás</h2>
+                    <p>
+                        Sme odborníci na opravy a údržbu počítačov. Naším cieľom je poskytovať rýchle a kvalitné služby, aby ste sa mohli opäť spoľahnúť na svoju techniku.
+                    </p>
+                    <p>
+                        Naša misia je zabezpečiť, aby každý zákazník dostal kvalitné a efektívne riešenia. Bez ohľadu na to, či ide o opravu hardvéru, odstránenie vírusov alebo inštaláciu softvéru. Sme tu, aby sme pomohli.
+                    </p>
+                    <a href="#contact" class="button">Kontaktujte nás</a>
+                </div>
+                <div class="about-image">
+                    <img src="/assets/66ce1704f8fa0c9424ae1bea_pc3.jpg" alt="O nás" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Služby</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-wrench"></i> 
+                    <h3>Oprava počítačov a notebookov</h3>
+                    <p>Diagnostika a oprava hardvérových a softvérových problémov.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-download"></i>
+                    <h3>Inštalácia a aktualizácia softvéru</h3>
+                    <p>Inštalácia operačných systémov, ovládačov a programov.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Odstránenie vírusov a malvéru</h3>
+                    <p>Čistenie počítača od vírusov, spyware a iného malvéru.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-database"></i>
+                    <h3>Zálohovanie a obnova dát</h3>
+                    <p>Zálohovanie a obnova dôležitých dát z vášho počítača.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Nastavenie sietí a Wi-Fi</h3>
+                    <p>Konfigurácia a zabezpečenie domácej alebo firemnej siete.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Optimalizácia výkonu počítačov</h3>
+                    <p>Zrýchlenie a optimalizácia vášho počítača pre lepší výkon.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Poradenstvo pri nákupe nového hardvéru</h3>
+                    <p>Pomoc s výberom vhodného hardvéru pre vaše potreby.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-headset"></i>
+                    <h3>Vzdialená podpora</h3>
+                    <p>Rýchla a efektívna pomoc s vašimi počítačovými problémami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-section">
+        <div class="container">
+            <h2>Ako to funguje?</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <h3>Krok 1: Kontaktujte nás</h3>
+                    <p>Zavolajte nám alebo vyplňte náš <a href="#contact">kontaktný formulár</a>. Po prijatí vašej správy sa vám čo najskôr ozveme.</p>
+                </div>
+                <div class="step">
+                    <h3>Krok 2: Dohodnutie termínu</h3>
+                    <p>Spoločne dohodneme termín vyzdvihnutia vášho zariadenia, alebo si ho môžete priniesť na jedno z našich odberných miest.</p>
+                </div>
+                <div class="step">
+                    <h3>Krok 3: Preberací protokol</h3>
+                    <p>Spíšeme preberací protokol, kde zaznamenáme stav zariadenia a popíšeme potrebné opravy alebo zásahy.</p>
+                </div>
+                <div class="step">
+                    <h3>Krok 4: Oprava a spätná komunikácia</h3>
+                    <p>Opravíme vaše zariadenie a po ukončení prác vás budeme informovať o možnosti vyzdvihnutia alebo doručenia zariadenia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="pricing" id="pricing">
+        <div class="container">
+          <h2>Cenník</h2>
+          <p class="pricing-vat">Ceny sú uvedené s DPH.</p> <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Služba</th>
+                <th>Popis</th>
+                <th>Cena</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Oprava počítača</td>
+                <td>Diagnostika a oprava hardvérových a softvérových problémov.</td>
+                <td>€50</td>
+              </tr>
+              <tr>
+                <td>Odstránenie vírusov</td>
+                <td>Čistenie počítača od vírusov, spyware a iného malvéru.</td>
+                <td>€30</td>
+              </tr>
+              <tr>
+                <td>Inštalácia softvéru</td>
+                <td>Inštalácia operačných systémov, ovládačov a programov.</td>
+                <td>€30</td>
+              </tr>
+              <tr>
+                <td>Zálohovanie a obnova dát</td>
+                <td>Zálohovanie a obnova dôležitých dát z vášho počítača.</td>
+                <td>€40</td>
+              </tr>
+              <tr>
+                <td>Nastavenie sietí a Wi-Fi</td>
+                <td>Konfigurácia a zabezpečenie domácej alebo firemnej siete.</td>
+                <td>€30</td>
+              </tr>
+              <tr>
+                <td>Optimalizácia výkonu</td>
+                <td>Zrýchlenie a optimalizácia vášho počítača pre lepší výkon.</td>
+                <td>€35</td>
+              </tr>
+              <tr>
+                <td>Poradenstvo pri nákupe hardvéru</td>
+                <td>Pomoc s výberom vhodného hardvéru pre vaše potreby.</td>
+                <td>€20</td>
+              </tr>
+              <tr>
+                <td>Vzdialená podpora</td>
+                <td>Rýchla a efektívna pomoc s vašimi počítačovými problémami.</td>
+                <td>€20</td>
+              </tr>
+              <tr>
+                <td>Doprava</td> <!-- Nová služba -->
+                <td>Odvoz a dovoz zariadenia na vašu adresu.</td>
+                <td>€10</td> <!-- Cena pre službu -->
+            </tr>
+            </tbody>
+          </table>
+           <!-- Upozornenie -->
+        <p class="pricing-note"><strong>Poznámka:</strong> Výsledná cena sa môže líšiť v závislosti od komplexnosti a náročnosti problému.</p>
+        </div>
+      </section>
+
+    <section id="hours" class="hours">
+        <div class="container">
+            <h2>Kontakty a otváracie hodiny</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <i class="fa-solid icon-clock"></i>
+                    <h3>Otváracie hodiny</h3>
+                    <p>Pondelok - Piatok: 8:00 - 18:00</p>
+                    <p>Sobota: 9:00 - 13:00</p>
+                </div>
+    
+                <!-- Zlúčený blok Telefón a Kontakt -->
+                <div class="hours-item">
+                    <i class="fa-solid icon-phone"></i>
+                    <h3>Telefón a Kontakt</h3>
+                    <p>Telefón: <a href="tel:+421xxxxxxxxx">+421 xxx xxx xxx </a></p>
+                    <p>Email: <a href="mailto:fixnipc@gmail.com">fixnipc@gmail.com</a></p>
+                </div>
+            </div>
+    
+            <!-- Miesta vyzdvihnutia -->
+            <div class="pickup-location">
+                <h3>Odberné miesta</h3>
+                <div class="pickup-item">
+                    <i class="fa-solid icon-location"></i>
+                        <a href="https://maps.app.goo.gl/QqyLpz8apqXyNR966" target="_blank">
+                            <p>596, 972 24 Diviacka Nová ves, Slovensko</p>
+                            <i class="fa-solid fa-map-marker-alt"></i> <!-- Ikona Google mapy -->
+                        </a>
+                </div>
+                <div class="pickup-item">
+                    <i class="fa-solid icon-location"></i>
+                        <a href="https://maps.app.goo.gl/VpKjhchhJXnjYqhb9" target="_blank">
+                            <p>J. Bendíka 738/6, 971 01 Prievidza, Slovensko</p>
+                            <i class="fa-solid fa-map-marker-alt"></i> <!-- Ikona Google mapy -->
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section id="service-options" class="service-options">
+        <div class="container">
+            <h2>Doprava a vyzdvihnutie</h2>
+            <p>Máte možnosť prísť so svojím zariadením na našu adresu, alebo využite našu službu, pri ktorej po zariadenie prídeme my. Zabezpečíme rýchlu a bezpečnú prepravu, aby ste sa nemuseli starať o nič.</p>
+            <p><strong>Možnosti:</strong></p>
+            <ul>
+                <li><strong>Osobné doručenie:</strong> Prineste svoje zariadenie priamo na naše odberné miesto.</li>
+                <li><strong>Vyzdvihnutie zariadenia:</strong> Môžeme prísť po vaše zariadenie na vašu adresu. Poplatok za túto službu je €10.</li>
+            </ul>
+        </div>
+    </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontaktujte nás</h2>
+            <form id="contact-form" action="https://formspree.io/your-email" method="POST">
+                <label for="name">Vaše meno:</label>
+                <input type="text" id="name" name="name" placeholder="Zadajte svoje meno" required>
+                
+                <label for="email">Váš email:</label>
+                <input type="email" id="email" name="email" placeholder="Zadajte svoj email" required>
+                
+                <label for="message">Vaša správa:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Popíšte problém" required></textarea>
+                
+                <button type="submit">Odoslať</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fixni PC. Všetky práva vyhradené.</p>
+            <p>Kontaktujte nás na <a href="mailto:fixnipc@gmail.com">fixnipc@gmail.com</a></p>
+            <p><strong>IČO:</strong> 56528159</p>
+            <p><strong>DIČ:</strong> xxx</p>
+            <p><strong>Adresa:</strong> 596, 972 24 Diviacka Nová ves, Slovensko</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" title="Späť hore">↑</button>
+    <script src="/src/script.js"></script>
+
+</body>
+</html>
