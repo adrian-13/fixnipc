@@ -335,14 +335,13 @@ section {
     line-height: 1.6;
 }
 
-a[href="#contact"] {
-    color: #4caf50; /* Nastaví zelenú farbu pre odkaz */
-    text-decoration: none; /* Odstráni podčiarknutie */
-    font-weight: bold; /* Prípadne môžeš nastaviť tučné písmo, ak chceš */
+.custom-link {
+    color: #4caf50; /* Zelená farba */
+    text-decoration: none; /* Bez podčiarknutia */
 }
 
-a[href="#contact"]:hover {
-    color: #388e3c; /* Zmena farby pri hover na tmavšiu zelenú */
+.custom-link:hover {
+    color: #388e3c; /* Tmavšia zelená pri hover */
 }
 
 
