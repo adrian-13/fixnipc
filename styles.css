@@ -742,4 +742,13 @@ footer p {
     box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3); /* Vylepšený tieň pri hover */
 }
 
+/* Responzívny dizajn */
+@media (max-width: 37.5em) {
+    .scroll-to-top{
+        bottom: 1.2em; /* Vzdialenosť od spodku */
+        right: 1.2em; /* Vzdialenosť od pravej strany */
+        width: 2.125em; /* Šírka tlačidla */
+        height: 2.125em; /* Výška tlačidla */
+    }
+}
 
