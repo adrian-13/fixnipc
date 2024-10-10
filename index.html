@@ -2,7 +2,7 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fixni PC - Servis a oprava počítačov</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/353e41ed59.js" crossorigin="anonymous"></script>
@@ -12,6 +12,11 @@
         <div class="container">
             <div class="logo-container">
                 <img src="/assets/66ce0d3f7aafdccbd0aad480_FixniPC2.png" alt="Logo" class="logo" />
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
             <nav class="navigation">
                 <ul>
@@ -36,7 +41,6 @@
                         Naša misia je zabezpečiť, aby každý zákazník dostal kvalitné a efektívne riešenia. Bez ohľadu na to, či ide o opravu hardvéru, odstránenie vírusov alebo inštaláciu softvéru, sme tu, aby sme pomohli.
                     </p>
                     <a href="#contact" class="button">Kontaktujte nás</a>
-                    <a href="#services" class="button-2">Zobraziť služby</a>
                 </div>
                 <div class="about-image">
                     <img src="/assets/66ce1704f8fa0c9424ae1bea_pc3.jpg" alt="O nás" />
@@ -45,9 +49,6 @@
         </div>
     </section>
     
-    
-    
-
     <section id="services" class="services">
         <div class="container">
             <h2>Služby</h2>
@@ -96,47 +97,30 @@
         </div>
     </section>
 
-    <section id="hours" class="hours">
+    <section id="process" class="process-section">
         <div class="container">
-            <h2>Kontakty a otváracie hodiny</h2>
-            <div class="hours-grid">
-                <div class="hours-item">
-                    <i class="fa-solid icon-clock"></i>
-                    <h3>Otváracie hodiny</h3>
-                    <p>Pondelok - Piatok: 8:00 - 18:00</p>
-                    <p>Sobota: 9:00 - 13:00</p>
+            <h2>Ako to funguje?</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <h3>Krok 1: Kontaktujte nás</h3>
+                    <p>Zavolajte nám alebo vyplňte náš <a href="#contact">kontaktný formulár</a>. Po prijatí vašej správy sa vám čo najskôr ozveme.</p>
                 </div>
-    
-                <!-- Zlúčený blok Telefón a Kontakt -->
-                <div class="hours-item">
-                    <i class="fa-solid icon-phone"></i>
-                    <h3>Telefón a Kontakt</h3>
-                    <p>Telefón: <a href="tel:+421xxxxxxxxx">+421 xxx xxx xxx </a></p>
-                    <p>Email: <a href="mailto:fixnipc@gmail.com">fixnipc@gmail.com</a></p>
+                <div class="step">
+                    <h3>Krok 2: Dohodnutie termínu</h3>
+                    <p>Spoločne dohodneme termín vyzdvihnutia vášho zariadenia, alebo si ho môžete priniesť na jedno z našich odberných miest.</p>
                 </div>
-            </div>
-    
-            <!-- Miesta vyzdvihnutia -->
-            <div class="pickup-location">
-                <h3>Miesta vyzdvihnutia</h3>
-                <div class="pickup-item">
-                    <i class="fa-solid icon-location"></i>
-                        <a href="https://maps.app.goo.gl/QqyLpz8apqXyNR966" target="_blank">
-                            <p>596, 972 24 Diviacka Nová ves, Slovensko</p>
-                            <i class="fa-solid fa-map-marker-alt"></i> <!-- Ikona Google mapy -->
-                        </a>
+                <div class="step">
+                    <h3>Krok 3: Preberací protokol</h3>
+                    <p>Spíšeme preberací protokol, kde zaznamenáme stav zariadenia a popíšeme potrebné opravy alebo zásahy.</p>
                 </div>
-                <div class="pickup-item">
-                    <i class="fa-solid icon-location"></i>
-                        <a href="https://maps.app.goo.gl/VpKjhchhJXnjYqhb9" target="_blank">
-                            <p>J. Bendíka 738/6, 971 01 Prievidza, Slovensko</p>
-                            <i class="fa-solid fa-map-marker-alt"></i> <!-- Ikona Google mapy -->
-                        </a>
+                <div class="step">
+                    <h3>Krok 4: Oprava a spätná komunikácia</h3>
+                    <p>Opravíme vaše zariadenie a po ukončení prác vás budeme informovať o možnosti vyzdvihnutia alebo doručenia zariadenia.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+ 
     <section class="pricing" id="pricing">
         <div class="container">
           <h2>Cenník</h2>
@@ -162,7 +146,7 @@
               <tr>
                 <td>Inštalácia softvéru</td>
                 <td>Inštalácia operačných systémov, ovládačov a programov.</td>
-                <td>€40</td>
+                <td>€30</td>
               </tr>
               <tr>
                 <td>Zálohovanie a obnova dát</td>
@@ -201,13 +185,54 @@
         </div>
       </section>
 
+    <section id="hours" class="hours">
+        <div class="container">
+            <h2>Kontakty a otváracie hodiny</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <i class="fa-solid icon-clock"></i>
+                    <h3>Otváracie hodiny</h3>
+                    <p>Pondelok - Piatok: 8:00 - 18:00</p>
+                    <p>Sobota: 9:00 - 13:00</p>
+                </div>
+    
+                <!-- Zlúčený blok Telefón a Kontakt -->
+                <div class="hours-item">
+                    <i class="fa-solid icon-phone"></i>
+                    <h3>Telefón a Kontakt</h3>
+                    <p>Telefón: <a href="tel:+421xxxxxxxxx">+421 xxx xxx xxx </a></p>
+                    <p>Email: <a href="mailto:fixnipc@gmail.com">fixnipc@gmail.com</a></p>
+                </div>
+            </div>
+    
+            <!-- Miesta vyzdvihnutia -->
+            <div class="pickup-location">
+                <h3>Odberné miesta</h3>
+                <div class="pickup-item">
+                    <i class="fa-solid icon-location"></i>
+                        <a href="https://maps.app.goo.gl/QqyLpz8apqXyNR966" target="_blank">
+                            <p>596, 972 24 Diviacka Nová ves, Slovensko</p>
+                            <i class="fa-solid fa-map-marker-alt"></i> <!-- Ikona Google mapy -->
+                        </a>
+                </div>
+                <div class="pickup-item">
+                    <i class="fa-solid icon-location"></i>
+                        <a href="https://maps.app.goo.gl/VpKjhchhJXnjYqhb9" target="_blank">
+                            <p>J. Bendíka 738/6, 971 01 Prievidza, Slovensko</p>
+                            <i class="fa-solid fa-map-marker-alt"></i> <!-- Ikona Google mapy -->
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
       <section id="service-options" class="service-options">
         <div class="container">
             <h2>Doprava a vyzdvihnutie</h2>
             <p>Máte možnosť prísť so svojím zariadením na našu adresu, alebo využite našu službu, pri ktorej po zariadenie prídeme my. Zabezpečíme rýchlu a bezpečnú prepravu, aby ste sa nemuseli starať o nič.</p>
             <p><strong>Možnosti:</strong></p>
             <ul>
-                <li><strong>Osobné doručenie:</strong> Prineste svoje zariadenie priamo do našej prevádzky.</li>
+                <li><strong>Osobné doručenie:</strong> Prineste svoje zariadenie priamo na naše odberné miesto.</li>
                 <li><strong>Vyzdvihnutie zariadenia:</strong> Môžeme prísť po vaše zariadenie na vašu adresu. Poplatok za túto službu je €10.</li>
             </ul>
         </div>
@@ -224,25 +249,20 @@
                 <input type="email" id="email" name="email" placeholder="Zadajte svoj email" required>
                 
                 <label for="message">Vaša správa:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Napíšte správu" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Popíšte problém" required></textarea>
                 
                 <button type="submit">Odoslať</button>
             </form>
         </div>
     </section>
     
-
     <footer>
         <div class="container">
             <p>&copy; 2024 Fixni PC. Všetky práva vyhradené.</p>
-            <ul class="footer-links">
-                <li><a href="#about" class="scroll-link">O nás</a></li>
-                <li><a href="#hours" class="scroll-link">Prevádzkové hodiny</a></li>
-                <li><a href="#services" class="scroll-link">Služby</a></li>
-                <li><a href="#pricing" class="scroll-link">Cenník</a></li>
-                <li><a href="#contact" class="scroll-link">Kontakt</a></li>
-            </ul>
             <p>Kontaktujte nás na <a href="mailto:fixnipc@gmail.com">fixnipc@gmail.com</a></p>
+            <p><strong>IČO:</strong> 56528159</p>
+            <p><strong>DIČ:</strong> xxx</p>
+            <p><strong>Adresa:</strong> 596, 972 24 Diviacka Nová ves, Slovensko</p>
         </div>
     </footer>
 
