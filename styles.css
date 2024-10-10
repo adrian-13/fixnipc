@@ -191,17 +191,20 @@ section {
     }
 
     .about-text {
-        padding-right: 0; /* Odstránenie paddingu na menších obrazovkách */
+        padding: 1.25em; /* Odstránenie paddingu na menších obrazovkách */
         text-align: center; /* Centrovanie textu */
     }
 
     .about-image {
         width: 100%; /* Obrázok bude mať 100% šírku */
         margin-top: 1.25em; /* Priestor medzi textom a obrázkom */
-        border-top-right-radius: 0em;
-        border-bottom-right-radius: 0em;
+        border-radius: 0;
         padding: 0;
-        margin: 0 0 -0.3125em 0;
+        margin: 1em 0 -0.3125em 0;
+    }
+
+    .container {
+        padding: 0em;
     }
 }
 
@@ -231,7 +234,7 @@ section {
 /* Media Queries pre responsívny dizajn */
 @media (max-width: 52.5em) {
     .button {
-        padding: 0.625em 1.25em; /* Zmenšenie paddingu */
+        padding: 1em 1.25em; /* Zmenšenie paddingu */
         margin-top: 0.625em; /* Zmenšenie marginu nad tlačidlom */
         margin-left: 0.3125em; /* Zmenšenie marginu na ľavej strane pre tlačidlo-2 */
     }
@@ -239,8 +242,7 @@ section {
 
 @media (max-width: 30em) {
     .button {
-    
-        padding: 0.5em 0.9375em; /* Ďalšie zmenšenie paddingu */
+        padding: 1em 1.25em; /* Ďalšie zmenšenie paddingu */
         font-size: 1em;/* Ďalšie zmenšenie veľkosti písma */
         margin-top: 0.625em; /* Ďalšie zmenšenie marginu nad tlačidlom */
         margin-left: 0; /* Zmenšenie marginu na ľavej strane pre tlačidlo-2 */
