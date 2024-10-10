@@ -180,6 +180,32 @@ section {
 }
 
 
+/* Responzívny dizajn */
+@media (max-width: 37.5em) {
+    .about-section {
+        padding: 0em; /* Odstránenie paddingu z celej sekcie */
+    }
+    .about-content {
+        flex-direction: column; /* Obrázok a text sa zoradia pod seba */
+        align-items: center; /* Zarovnanie na stred */
+    }
+
+    .about-text {
+        padding-right: 0; /* Odstránenie paddingu na menších obrazovkách */
+        text-align: center; /* Centrovanie textu */
+    }
+
+    .about-image {
+        width: 100%; /* Obrázok bude mať 100% šírku */
+        margin-top: 1.25em; /* Priestor medzi textom a obrázkom */
+        border-top-right-radius: 0em;
+        border-bottom-right-radius: 0em;
+        padding: 0;
+        margin: 0 0 -0.3125em 0;
+    }
+}
+
+
 /* Buttons */
 
 .button {
@@ -686,11 +712,7 @@ footer {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1em
-
-
-Zdroje a súvisiaci obsah
-;
+    font-size: 1em;
     transition: color 0.3s ease; /* Jemný prechod farby */
 }
 
@@ -751,4 +773,5 @@ footer p {
         height: 2.125em; /* Výška tlačidla */
     }
 }
+
 
