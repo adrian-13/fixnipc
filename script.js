@@ -73,4 +73,9 @@ document.querySelectorAll('.button-2').forEach(anchor => {
     });
 });
 
-
+// JavaScript na otváranie a zatváranie hamburger menu
+document.getElementById("hamburger-menu").addEventListener("click", function() {
+    var navMenu = document.getElementById("nav-menu");
+    navMenu.classList.toggle("show");  // Pridá alebo odstráni triedu 'show'
+    print("Ahoj")
+});
