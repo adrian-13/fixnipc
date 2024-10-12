@@ -144,7 +144,7 @@ section {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: #4caf50;
 }
 
 .modal-content {
@@ -156,17 +156,17 @@ section {
     align-items: center;
     text-align: center;
     background-color: #4caf50;
-    margin: 10px 0; /* Odstránime margin */
-    padding: 20px;
-    font-size: 32px;
+    margin: 0.625em 0; /* Odstránime margin */
+    padding: 1.25em;
+    font-size: 1.5em;
     border: none; /* Odstránime border */
     border-radius: 0; /* Odstránime zaoblenie rohov */
 }
 
 .close-button {
     position: absolute;
-    top: 32px; /* Vzdialenosť od vrchu */
-    right: 32px; /* Vzdialenosť od pravej strany */
+    top: 1em; /* Vzdialenosť od vrchu */
+    right: 1em; /* Vzdialenosť od pravej strany */
     color: white;
     float: right;
     font-size: 1.75em;
