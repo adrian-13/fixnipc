@@ -72,10 +72,10 @@ section {
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
+    width: 1.5625em;
+    height: 0.1875em;
     background-color: white;
-    margin: 4px 0;
+    margin: 0.1875em 0;
 }
 
 .navigation {
@@ -102,7 +102,7 @@ section {
 }
 
 .navigation a:hover {
-    text-decoration: underline;
+    color: #000;
 }
 
 .hamburger {
@@ -112,14 +112,14 @@ section {
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
+    width: 1.5625em;
+    height: 0.1875em;
     background-color: black;
-    margin: 5px 0;
+    margin: 0.3125em 0;
 }
 
 /* Skrytie navigácie na menších obrazovkách */
-@media (max-width: 768px) {
+@media (max-width: 37.5em) {
     .navigation {
         display: none;
         flex-direction: column;
@@ -131,6 +131,85 @@ section {
         width: 100%;
         z-index: 10;
     }  
+}
+
+/* ... your existing CSS ... */
+
+/* Štýly pre modálne okno */
+.menu-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    display: flex;
+    width: 100%; 
+    height: 100%; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #4caf50;
+    margin: 10px 0; /* Odstránime margin */
+    padding: 20px;
+    font-size: 32px;
+    border: none; /* Odstránime border */
+    border-radius: 0; /* Odstránime zaoblenie rohov */
+}
+
+.close-button {
+    position: absolute;
+    top: 32px; /* Vzdialenosť od vrchu */
+    right: 32px; /* Vzdialenosť od pravej strany */
+    color: white;
+    float: right;
+    font-size: 1.75em;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu-modal ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-modal ul li {
+    margin: 0.9375em 0;
+}
+
+.menu-modal ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125em;
+}
+
+.menu-modal ul li a:hover {
+    color: #000;
+}
+
+/* Responzívny dizajn */
+@media (max-width: 37.5em) {
+    .navigation {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
 }
 
 /* About */
@@ -237,6 +316,7 @@ section {
         padding: 1em 1.25em; /* Zmenšenie paddingu */
         margin-top: 0.625em; /* Zmenšenie marginu nad tlačidlom */
         margin-left: 0.3125em; /* Zmenšenie marginu na ľavej strane pre tlačidlo-2 */
+        color: white; /* Farba textu */
     }
 }
 
@@ -246,6 +326,7 @@ section {
         font-size: 1em;/* Ďalšie zmenšenie veľkosti písma */
         margin-top: 0.625em; /* Ďalšie zmenšenie marginu nad tlačidlom */
         margin-left: 0; /* Zmenšenie marginu na ľavej strane pre tlačidlo-2 */
+        color: white; /* Farba textu */
     }
 }
 
