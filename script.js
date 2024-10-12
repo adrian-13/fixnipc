@@ -45,37 +45,84 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: 'smooth' // Hladké scrollovanie
         });
     };
-});
 
-document.querySelectorAll('.button').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Zabrániť predvolenej akcii
-        const targetID = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetID);
+    // Scrollovanie na sekciu pri kliknutí na tlačidlo s class="button"
+    document.querySelectorAll('.button').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Zabrániť predvolenej akcii
+            const targetID = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetID);
 
-        window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth'
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
         });
     });
-});
 
-document.querySelectorAll('.button-2').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Zabrániť predvolenej akcii
-        const targetID = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetID);
+    // Hamburger menu a modálne okno
+    const hamburger = document.getElementById("hamburger-menu");
+    const modal = document.getElementById("menu-modal");
+    const closeButton = document.getElementById("close-button");
+    const menuLinks = document.querySelectorAll("#menu-modal .scroll-link");
 
-        window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth'
+    // Funkcia na otvorenie modálneho okna
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    // Funkcia na zatvorenie modálneho okna
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Otvoriť modálne okno pri kliknutí na hamburger menu
+    hamburger.addEventListener('click', openModal);
+
+    // Zatvoriť modálne okno pri kliknutí na krížik
+    closeButton.addEventListener('click', closeModal);
+
+    // Zatvoriť modálne okno pri kliknutí mimo neho
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+
+    // Obsluha kliknutia na položky menu
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection   
+    = document.getElementById(targetId);
+
+            if (targetSection)   
+    {
+                closeModal(); // Zatvor modálne okno pred scrollovaním
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-});
 
-// JavaScript na otváranie a zatváranie hamburger menu
-document.getElementById("hamburger-menu").addEventListener("click", function() {
-    var navMenu = document.getElementById("nav-menu");
-    navMenu.classList.toggle("show");  // Pridá alebo odstráni triedu 'show'
-    print("Ahoj")
+    // Funkcia na kontrolu šírky okna a zobrazenie/skrytie hamburger menu
+    function checkWidth() {
+        if (window.innerWidth <= 768) {
+            hamburger.style.display = "block";
+            document.querySelector('.navigation').style.display = "none";
+        } else {
+            hamburger.style.display = "none";
+            document.querySelector('.navigation').style.display = "block";
+            closeModal(); // Zavrieť modálne okno ak sa zväčší obrazovka
+        }
+    }
+
+    // Kontrola šírky pri načítaní stránky
+    checkWidth();
+
+    // Kontrola šírky pri zmene veľkosti okna
+    window.addEventListener('resize', checkWidth);
 });
