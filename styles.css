@@ -888,58 +888,65 @@ footer p {
     }
 }
 
+
 /* Scroll to top */
 .scroll-to-top {
-    position: fixed; /* Fixná pozícia na obrazovke */
-    bottom: 1.875em; /* Vzdialenosť od spodku */
-    right: 1.875em; /* Vzdialenosť od pravej strany */
-    width: 4em; /* Šírka tlačidla */
-    height: 4em; /* Výška tlačidla */
-    border-radius: 50%; /* Zaoblenie na 100%, aby bolo okrúhle */
-    background-color: #4caf50; /* Zelená farba pozadia */
-    color: white; /* Biely text */
-    border: none; /* Bez okrajov */
-    cursor: pointer; /* Ukazovateľ pri hover */
-    display: flex; /* Použitie flexboxu */
-    justify-content: center; /* Horizontálne centrovanie */
-    align-items: center; /* Vertikálne centrovanie */
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Jemný tieň */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Prechod farby a tieňa */
-    display: none; /* Skryté predtým, než sa začne scrollovať */
-    -webkit-tap-highlight-color: transparent; /* Zamedzí farebnému zvýrazneniu na iOS */
+    position: fixed;
+    bottom: 1.875em;
+    right: 1.875em;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: none;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+    line-height: 1; /* Zmenené z 4em na 1 */
+    padding: 0; /* Pridané */
+    z-index: 9999; /* Pridané */
 }
 
+/* Zmeny pre ikonu */
 .scroll-to-top i {
-    font-size: 1.5em; /* Veľkosť ikony */
+    font-size: 1.5em;
+    position: absolute; /* Pridané */
+    top: 50%; /* Pridané */
+    left: 50%; /* Pridané */
+    transform: translate(-50%, -50%); /* Pridané */
 }
 
 /* Hover efekt */
 .scroll-to-top:hover {
-    background-color: #388e3c; /* Tmavšia zelená pri hover */
-    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3); /* Vylepšený tieň pri hover */
+    background-color: #388e3c;
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
-/* Responzívny dizajn */
-@media (max-width: 37.5em) {
+/* Špecifické štýly pre mobilné zariadenia */
+@media only screen and (max-width: 37.5em) {
     .scroll-to-top {
-        bottom: 1.2em; /* Vzdialenosť od spodku */
-        right: 1.2em; /* Vzdialenosť od pravej strany */
-        width: 2.125em; /* Šírka tlačidla */
-        height: 2.125em; /* Výška tlačidla */
-        font-size: 1.5em; /* Veľkosť ikony */
+        width: 2.5em; /* Mierne zväčšené */
+        height: 2.5em; /* Mierne zväčšené */
+        font-size: 1.2em; /* Mierne zmenšené */
+        bottom: max(1.875em, env(safe-area-inset-bottom));
+        right: max(1.875em, env(safe-area-inset-right));
+        transform: translateZ(0);
+    }
+    
+    .scroll-to-top i {
+        font-size: 1.25em; /* Pridané pre lepšie škálovanie na menších obrazovkách */
     }
 }
 
-/* Špecifické štýly pre iPhone */
-@media only screen and (max-width: 37.5em) {
+/* Podpora pre staršie verzie iOS */
+@supports (-webkit-overflow-scrolling: touch) {
     .scroll-to-top {
-        width: 2.125em; /* Šírka tlačidla */
-        height: 2.125em; /* Výška tlačidla */
-        border-radius: 50%; /* Udržanie zaobleného tvaru */
-        font-size: 1.5em; /* Veľkosť ikony na menších obrazovkách */
-        bottom: max(1.875em, env(safe-area-inset-bottom)); /* Zohľadnenie spodného insetu */
-        right: max(1.875em, env(safe-area-inset-right)); /* Zohľadnenie pravého insetu */
-        transform: translateZ(0); /* Vylepšenie výkonu */
+        bottom: 1.875em;
+        right: 1.875em;
     }
 }
 
