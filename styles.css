@@ -889,22 +889,17 @@ footer p {
 }
 
 /* Scroll to top */
-
 .scroll-to-top {
     position: fixed; /* Fixná pozícia na obrazovke */
     bottom: 1.875em; /* Vzdialenosť od spodku */
     right: 1.875em; /* Vzdialenosť od pravej strany */
-    width: 3.125em; /* Šírka tlačidla */
-    height: 3.125em; /* Výška tlačidla */
+    width: 4em; /* Šírka tlačidla */
+    height: 4em; /* Výška tlačidla */
     border-radius: 50%; /* Zaoblenie na 100%, aby bolo okrúhle */
-    -webkit-border-radius: 50%;
     background-color: #4caf50; /* Zelená farba pozadia */
     color: white; /* Biely text */
     border: none; /* Bez okrajov */
     cursor: pointer; /* Ukazovateľ pri hover */
-    font-size: 1.5em; /* Veľkosť šípky */
-    display: -webkit-box; /* Staršie verzie Safari */
-    display: -webkit-flex; /* Pre Safari */
     display: flex; /* Použitie flexboxu */
     justify-content: center; /* Horizontálne centrovanie */
     align-items: center; /* Vertikálne centrovanie */
@@ -914,6 +909,11 @@ footer p {
     -webkit-tap-highlight-color: transparent; /* Zamedzí farebnému zvýrazneniu na iOS */
 }
 
+.scroll-to-top i {
+    font-size: 1.5em; /* Veľkosť ikony */
+}
+
+/* Hover efekt */
 .scroll-to-top:hover {
     background-color: #388e3c; /* Tmavšia zelená pri hover */
     box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3); /* Vylepšený tieň pri hover */
@@ -926,6 +926,7 @@ footer p {
         right: 1.2em; /* Vzdialenosť od pravej strany */
         width: 2.125em; /* Šírka tlačidla */
         height: 2.125em; /* Výška tlačidla */
+        font-size: 1.5em; /* Veľkosť ikony */
     }
 }
 
@@ -934,13 +935,12 @@ footer p {
     .scroll-to-top {
         width: 2.125em; /* Šírka tlačidla */
         height: 2.125em; /* Výška tlačidla */
-        /* Pridané vlastnosti pre lepšie zobrazenie */
         border-radius: 50%; /* Udržanie zaobleného tvaru */
-        -webkit-border-radius: 50%;
-        font-size: 1.8em; /* Zmenšenie veľkosti ikony na menších obrazovkách */
-        bottom: max(1.875em, env(safe-area-inset-bottom));
-        right: max(1.875em, env(safe-area-inset-right));
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
+        font-size: 1.5em; /* Veľkosť ikony na menších obrazovkách */
+        bottom: max(1.875em, env(safe-area-inset-bottom)); /* Zohľadnenie spodného insetu */
+        right: max(1.875em, env(safe-area-inset-right)); /* Zohľadnenie pravého insetu */
+        transform: translateZ(0); /* Vylepšenie výkonu */
     }
 }
+
+
