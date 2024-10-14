@@ -3,16 +3,16 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0; /* Svetlošedé pozadie pre celý web */
 }
 
 .container {
-    max-width: 50em;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 1.25em;
+    padding: 0 2.5%;
 }
 
 h1, h2 {
@@ -48,6 +48,8 @@ section {
 
 .header .container {
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     justify-content: space-between; /* Rozloženie medzi logom a navigáciou */
     align-items: center; /* Vertikálne zarovnanie */
     max-width: 51.25em; /* Maximálna šírka headeru */
@@ -71,15 +73,10 @@ section {
     cursor: pointer;
 }
 
-.bar {
-    width: 1.5625em;
-    height: 0.1875em;
-    background-color: white;
-    margin: 0.1875em 0;
-}
-
 .navigation {
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     justify-content: space-between;
     align-items: center;
 }
@@ -89,6 +86,8 @@ section {
     padding: 0;
     margin: 0;
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
 }
 
 .navigation li {
@@ -133,8 +132,6 @@ section {
     }  
 }
 
-/* ... your existing CSS ... */
-
 /* Štýly pre modálne okno */
 .menu-modal {
     display: none;
@@ -149,6 +146,8 @@ section {
 
 .modal-content {
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     width: 100%; 
     height: 100%; 
     flex-direction: column;
@@ -156,7 +155,6 @@ section {
     align-items: center;
     text-align: center;
     background-color: #4caf50;
-    margin: 0.625em 0; /* Odstránime margin */
     padding: 1em;
     font-size: 1.5em;
     border: none; /* Odstránime border */
@@ -220,20 +218,23 @@ section {
 
 .about-content {
     display: flex; /* Flexbox pre zarovnanie textu a obrázka */
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     align-items: stretch; /* Rozťahovanie na plnú výšku kontajnera */
     max-width: 50em; /* Maximálna šírka kontajnera */
     margin: 0 auto; /* Centrovanie */
 }
 
+
 .about-text {
-    flex: 1; /* Text zaberá polovicu priestoru */
+    flex: 2; /* Text zaberá 60 % priestoru */
     padding: 2.5em 2.5em 2.5em 0; /* Vnútorný padding pre text */
     color: #333; /* Tmavšia farba textu */
 }
 
-.about-text h2 {
-    font-size: 1.75em; /* Veľkosť nadpisu */
-    color: #388e3c; /* Tmavá zelená pre nadpis */
+.about-text h1 {
+    font-size: 2em; /* Veľkosť nadpisu */
+    color: #2f572f; /* Tmavá zelená pre nadpis */
     margin-bottom: 1.25em; /* Priestor pod nadpisom */
 }
 
@@ -245,19 +246,27 @@ section {
 
 .about-image {
     margin-right: -1.25em;
-    flex: 1; /* Obrázok zaberá polovicu priestoru */
-    overflow: hidden; /* Skrytie prebytočnej časti obrázka, ak existuje */
+    flex: 1.5; /* Obrázok zaberá 40 % priestoru */
+    overflow: hidden; /* Skrytie prebytočnej časti obrázka */
     border-top-right-radius: 0.625em;
     border-bottom-right-radius: 0.625em;
-
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Jemný tieň pre obrázok */
+    transition: transform 0.3s ease-in-out; /* Prechod pre hover efekt */
+    display: flex; /* Flexbox na rozšírenie obrázka */
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
+    align-items: stretch; /* Obrázok sa natiahne vertikálne */
 }
 
 .about-image img {
-    max-width: 100%; /* Obrázok sa prispôsobí dostupnému priestoru */
-    height: 100%; /* Zabezpečíme, že obrázok pokryje celú výšku kontajnera */
-    object-fit: cover; /* Zabezpečíme, že obrázok bude pokrývať celú plochu */
+    width: 100%; /* Obrázok sa prispôsobí celej šírke */
+    height: auto; /* Zabezpečuje správny pomer strán */
+    max-height: 100%; /* Zabránime, aby obrázok presahoval kontajner */
+    object-fit: cover; /* Obrázok sa oreže, aby pokryl celý priestor */
+    object-position: center; /* Uistíme sa, že sa obrázok centroval */
+    display: block; /* Zastaví prázdny priestor pod obrázkom */
+    -webkit-touch-callout: none; /* Zamedzí kontextovej ponuke v iOS */
 }
-
 
 /* Responzívny dizajn */
 @media (max-width: 37.5em) {
@@ -270,16 +279,17 @@ section {
     }
 
     .about-text {
-        padding: 1.25em; /* Odstránenie paddingu na menších obrazovkách */
+        padding: 1.25em; /* Zmenšenie paddingu na menších obrazovkách */
         text-align: center; /* Centrovanie textu */
     }
 
     .about-image {
         width: 100%; /* Obrázok bude mať 100% šírku */
+        margin-right: 0;
         margin-top: 1.25em; /* Priestor medzi textom a obrázkom */
-        border-radius: 0;
-        padding: 0;
-        margin: 1em 0 -0.3125em 0;
+        border-radius: 0; /* Odstránenie zaoblenia */
+        box-shadow: none; /* Odstránenie tieňa na menších zariadeniach */
+        overflow: hidden; /* Skrytie prebytočnej časti obrázka */
     }
 
     .container {
@@ -287,20 +297,19 @@ section {
     }
 }
 
-
 /* Buttons */
 
 .button {
     display: inline-block; /* Zobrazí ako blokový element */
-    margin-top: 3.125em; /* Priestor nad tlačidlom */
-    padding: 0.75em 1.5625em; /* Padding pre tlačidlo */
+    margin-top: 2em; /* Priestor nad tlačidlom */
+    padding: 1em 2em; /* Vylepšenie konzistencie paddingu */
     background-color: #4caf50; /* Zelená farba pre tlačidlo */
     color: white; /* Farba textu */
     border: none; /* Bez orámovania */
     border-radius: 1.5625em; /* Zaoblené rohy */
     text-decoration: none; /* Bez podčiarknutia */
     font-weight: bold; /* Tučný text pre tlačidlo */
-    font-size: 1em; /* Veľkosť písma */
+    font-size: 1.1em; /* Mierne zväčšenie písma */
     transition: background-color 0.3s, transform 0.3s; /* Prechod farby a transformácie */
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Jemný tieň */
 }
@@ -343,7 +352,7 @@ section {
 
 .service {
     background-color: #e8f5e9; /* Svetlozelená pre služby */
-    padding: 1.25em;
+    padding: 1.5em; /* Mierne zvýšenie paddingu */
     border-radius: 0.625em;
     box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Jemný tieň */
     text-align: center;
@@ -352,7 +361,7 @@ section {
 .service i {
     font-size: 1.875em;
     color: #388e3c;
-    margin-bottom: 0.625em;
+    margin-bottom: 1em; /* Zvýšenie medzery medzi ikonou a textom */
 }
 
 .services h2 {
@@ -373,14 +382,17 @@ section {
 
 .service:hover {
     background-color: #c8e6c9; /* Zmena pozadia pri hover */
+    transition: background-color 0.3s; /* Hladký prechod farby pozadia */
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Pridanie tieňa pri hover */
 }
+
 
 
 /* Process Section */
 
 .process-section {
     background-color: #e8f5e9; /* Svetlozelené pozadie pre sekciu */
-    padding: 2.5em 1.25em; /* Padding okolo sekcie */
+    padding: 3em 1.25em; /* Zvýšenie paddingu */
     text-align: left;
 }
 
@@ -404,8 +416,13 @@ section {
     box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1); /* Jemný tieň */
 }
 
+.step:hover {
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Pridanie tieňa pri hover */
+}
+
 .step h3 {
     font-size: 1.25em;
+    text-align: center; /* Centrálne zarovnanie nadpisov krokov */
     color: #388e3c; /* Zelená farba pre nadpisy krokov */
     margin-bottom: 0.625em;
 }
@@ -419,6 +436,7 @@ section {
 .custom-link {
     color: #4caf50; /* Zelená farba */
     text-decoration: none; /* Bez podčiarknutia */
+    transition: color 0.3s; /* Hladký prechod farby */
 }
 
 .custom-link:hover {
@@ -430,7 +448,7 @@ section {
 
 .hours {
     background-color: #e8f5e9; /* Svetlozelené pozadie */
-    padding: 3.125em 1.25em; /* Zväčšenie paddingu */
+    padding: 4em 1.25em; /* Zvýšenie paddingu */
     text-align: center;
 }
 
@@ -443,6 +461,8 @@ section {
 
 .hours-grid {
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     flex-wrap: wrap;
     gap: 1.875em;
     justify-content: center;
@@ -472,6 +492,8 @@ section {
     font-weight: bold;
 }
 
+
+
 .hours-item p {
     margin: 0.3125em 0;
     font-size: 1em;
@@ -482,6 +504,7 @@ section {
     color: #4caf50;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s; /* Hladký prechod farby */
 }
 
 .hours-item a:hover {
@@ -491,6 +514,7 @@ section {
 .hours-item i {
     margin-bottom: 0.9375em;
     display: block;
+    text-align: center; /* Centrálne zarovnanie ikony */
     font-size: 1.875em;
     color: #388e3c;
 }
@@ -511,14 +535,18 @@ section {
     font-weight: bold;
 }
 
+
+
 .pickup-item {
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     align-items: center;
     justify-content: center; /* Zarovná obsah na stred */
-    margin-bottom: 0.9375em;
+    padding: 1.25em; /* Zväčšenie paddingu */
+    margin-bottom: 1.25em; /* Zväčšenie marginu */
     background-color: #f5f5f5;
     border-radius: 0.5em;
-    padding: 0.9375em;
     box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -534,6 +562,8 @@ section {
     font-size: 1em;
     flex-grow: 1; /* Aby text vyplnil priestor */
     display: flex; /* Použitie flexu pre ikonu a text */
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     align-items: center; /* Vertikálne zarovnanie */
     justify-content: center; /* Zarovná text do stredu */
 }
@@ -546,10 +576,21 @@ section {
 
 .pickup-item a {
     display: flex; /* Použitie flexu pre ikonu a text */
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     align-items: center; /* Vertikálne zarovnanie */
     text-decoration: none; /* Bez podčiarknutia */
     width: 100%; /* Aby vyplnil celý riadok */
+    transition: color 0.3s; /* Hladký prechod farby */
 }
+
+.pickup-item a i {
+    display: flex; /* Použitie flexu pre zarovnanie ikony */
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
+    align-items: center; /* Vertikálne zarovnanie */
+}
+
 
 .pickup-item a:hover {
     color: #4caf50; /* Zelená farba pre odkaz pri hover */
@@ -593,6 +634,7 @@ section {
     box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1);
     border-radius: 0.625em;
     overflow: hidden;
+    overflow-x: auto; /* Povolenie horizontálneho posúvania */
   }
   
   .pricing-table thead {
@@ -614,6 +656,7 @@ section {
   
   .pricing-table tbody tr {
     border-bottom: 0.0625em solid #ddd;
+    transition: background-color 0.3s, transform 0.3s; /* Hladký prechod */
   }
   
   .pricing-table tbody tr:nth-child(even) {
@@ -658,6 +701,8 @@ section {
 /* Doprava a vyzdvihnutie */
 
 .service-options {
+    max-width: 50em; /* Maximálna šírka pre lepšiu čitateľnosť */
+    margin: 0 auto; /* Centrovanie sekcie */
     background-color: #f9f9f9; /* Jemne zelené pozadie */
     padding: 1.875em 1.25em;
     text-align: center;
@@ -695,7 +740,8 @@ section {
 }
 
 .service-options ul li:hover {
-    background-color: #c8e6c9; /* Zmena pozadia pri hover */
+     background-color: #a5d6a7; /* Tmavšia zelená */
+    transform: translateY(-0.1em); /* Jemné zvýšenie */
 }
 
 .service-options strong {
@@ -720,12 +766,14 @@ section {
 
 form {
     display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     flex-direction: column;
     align-items: center; /* Centrovanie položiek */
 }
 
 form label {
-    margin-bottom: 0.3125em;
+    margin-bottom: 0.625em; /* Zväčšenie medzery */
     font-weight: normal;
     align-items: left;
     text-align: left; /* Zarovnanie textu naľavo */
@@ -737,7 +785,7 @@ form input, form textarea {
     max-width: 26.25em; /* Maximálna šírka pre väčšie obrazovky */
     padding: 0.625em;
     margin-bottom: 1.25em;
-    border: 0.0625em solid #ccc;
+    border: 0.0625em solid #bbb; /* Jemnejší okraj */
     border-radius: 0.3125em; /* Zaoblenie rohov */
 }
 
@@ -764,6 +812,7 @@ form button {
 
 form button:hover {
     background-color: #388e3c; /* Tmavšia zelená pri najazdení myšou */
+    transform: scale(1.05); /* Jemné zväčšenie */
 }
 
 form p {
@@ -782,6 +831,11 @@ form p {
 /* Footer */
 
 footer {
+    display: flex;
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
+    flex-direction: column; /* Umožní vertikálne usporiadanie */
+    align-items: center; /* Centrovanie obsahu */
     background-color: #4caf50; /* Tmavšia zelená pre footer */
     color: white;
     text-align: center;
@@ -814,7 +868,7 @@ footer {
 }
 
 footer a {
-    color: #ffffff;
+    color: white; /* Vymaž duplicitu */
     text-decoration: none;
 }
 
@@ -823,11 +877,16 @@ footer a:hover {
 }
 
 footer p {
-    margin: 0.625em 0;
+    margin: 0.625em 0 1.25em; /* Zväčšenie dolného okraja */
     font-size: 0.875em;
     color: #c8e6c9; /* Svetlejšia zelená pre text */
 }
 
+@media (max-width: 30em) {
+    footer p {
+        font-size: 0.75em; /* Menšia veľkosť textu pre mobilné zariadenia */
+    }
+}
 
 /* Scroll to top */
 
@@ -843,12 +902,15 @@ footer p {
     border: none; /* Bez okrajov */
     cursor: pointer; /* Ukazovateľ pri hover */
     font-size: 1.5em; /* Veľkosť šípky */
+    display: -webkit-box; /* Staršie verzie Safari */
+    display: -webkit-flex; /* Pre Safari */
     display: flex; /* Použitie flexboxu */
     justify-content: center; /* Horizontálne centrovanie */
     align-items: center; /* Vertikálne centrovanie */
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Jemný tieň */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Prechod farby a tieňa */
     display: none; /* Skryté predtým, než sa začne scrollovať */
+    -webkit-tap-highlight-color: transparent; /* Zamedzí farebnému zvýrazneniu na iOS */
 }
 
 .scroll-to-top:hover {
@@ -858,7 +920,7 @@ footer p {
 
 /* Responzívny dizajn */
 @media (max-width: 37.5em) {
-    .scroll-to-top{
+    .scroll-to-top {
         bottom: 1.2em; /* Vzdialenosť od spodku */
         right: 1.2em; /* Vzdialenosť od pravej strany */
         width: 2.125em; /* Šírka tlačidla */
@@ -866,4 +928,13 @@ footer p {
     }
 }
 
-
+/* Špecifické štýly pre iPhone */
+@media only screen and (max-width: 37.5em) {
+    .scroll-to-top {
+        width: 2.125em; /* Šírka tlačidla */
+        height: 2.125em; /* Výška tlačidla */
+        /* Pridané vlastnosti pre lepšie zobrazenie */
+        border-radius: 50%; /* Udržanie zaobleného tvaru */
+        font-size: 1.25em; /* Zmenšenie veľkosti ikony na menších obrazovkách */
+    }
+}
