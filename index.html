@@ -273,16 +273,25 @@
       <section id="contact" class="contact">
         <div class="container">
             <h2>Kontaktujte nás</h2>
-            <form id="contact-form" action="https://formspree.io/your-email" method="POST">
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                
+                <!-- Polia pre formulár -->
                 <label for="name">Vaše meno:</label>
                 <input type="text" id="name" name="name" placeholder="Zadajte svoje meno" required>
-                
+            
                 <label for="email">Váš email:</label>
                 <input type="email" id="email" name="email" placeholder="Zadajte svoj email" required>
-                
+            
                 <label for="message">Vaša správa:</label>
                 <textarea id="message" name="message" rows="5" placeholder="Popíšte problém" required></textarea>
-                
+            
+                <!-- Ochrana proti botom 
+                <p class="hidden">
+                    <label>Nechajte toto pole prázdne: <input name="bot-field"></label>
+                </p>
+                -->
+            
                 <button type="submit">Odoslať</button>
             </form>
         </div>
