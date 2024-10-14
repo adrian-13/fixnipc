@@ -820,13 +820,6 @@ form p {
     color: #888; /* Jemná farba pre informácie */
 }
 
-/* Responzívny dizajn */
-@media (max-width: 30em) {
-    form input, form textarea {
-        max-width: 100%; /* Na menších obrazovkách zaberie tlačidlo plnú šírku */
-    }
-}
-
 
 /* Footer */
 
