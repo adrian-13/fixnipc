@@ -935,6 +935,6 @@ footer p {
         height: 2.125em; /* Výška tlačidla */
         /* Pridané vlastnosti pre lepšie zobrazenie */
         border-radius: 50%; /* Udržanie zaobleného tvaru */
-        font-size: 1.25em; /* Zmenšenie veľkosti ikony na menších obrazovkách */
+        font-size: 1.8em; /* Zmenšenie veľkosti ikony na menších obrazovkách */
     }
 }
