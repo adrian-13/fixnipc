@@ -292,19 +292,26 @@
                 </p>
                 -->
                 <button type="submit">Odoslať</button>
-            </form>
 
-            <form name="contact" netlify>
-  <p>
-    <label>Name <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+                            <form name="contact" method="POST" data-netlify="true">
+                <h2>Contact Form</h2>
+                <form method="post" name="Contact Form">
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </p>
+                <p>
+                    <label for="comments">Comments:</label><br/>
+                    <textarea name="comments" id="comments"></textarea>
+                </p>
+                <p>
+                    <input type="submit">
+                </p>
+              </form>
         </div>
     </section>
     
