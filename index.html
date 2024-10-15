@@ -278,24 +278,26 @@
         </div>
     </section>
 
-      <section id="contact" class="contact">
+    <section id="contact" class="contact">
         <div class="container">
-            <h2>Kontaktujte nás</h2>
-            <form name="contact" method="POST" data-netlify="true" action="/thank-you">
-                <input type="hidden" name="form-name" value="contact"> <!-- Skrytý input -->
-                <label for="name">Meno:</label><br>
-                <input type="text" id="name" name="name" required><br>
-              
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br>
-              
-                <label for="message">Správa:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br>
-              
-                <button type="submit">Odoslať</button>
-              </form>
+          <h2>Kontaktujte nás</h2>
+          <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact"> <!-- Skrytý input -->
+      
+            <label for="name">Meno:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="message">Správa:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            
+            <button type="submit">Odoslať</button>
+          </form>
         </div>
-    </section>
+      </section>
+      
     <!-- Modálne okno pre ďakovnú správu -->
     <div id="thank-you-modal" class="modal">
         <div class="modal-content">
