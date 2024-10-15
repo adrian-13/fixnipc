@@ -281,8 +281,9 @@
     <section id="contact" class="contact">
         <div class="container">
           <h2>Kontaktujte nás</h2>
+           <!--
           <form name="contact" method="POST" action="/pages/success" netlify>
-            <input type="hidden" name="form-name" value="contact"> <!-- Hidden field to specify form name -->
+            <input type="hidden" name="form-name" value="contact"> Hidden field to specify form name
       
             <label for="name">Meno:</label><br>
             <input type="text" id="name" name="name" required><br>
@@ -295,6 +296,22 @@
       
             <button type="submit">Odoslať</button>
           </form>
+           -->
+          <form name="contact" method="POST" data-netlify="true">
+            <p>
+              <label>Your Name: <input type="text" name="name" /></label>
+            </p>
+            <p>
+              <label>Your Email: <input type="email" name="email" /></label>
+            </p>
+            <p>
+              <label>Message: <textarea name="message"></textarea></label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
+          
         </div>
       </section>
       
