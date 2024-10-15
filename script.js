@@ -43,6 +43,31 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!emailPattern.test(emailInput)) {
             alert('Prosím, zadajte platný formát emailu.'); // Varovanie pre používateľa
             event.preventDefault(); // Zastavenie odoslania formulára
+        } else {
+            event.preventDefault(); // Zabrániť odoslaniu formulára
+            const modal = document.getElementById('thank-you-modal'); // Získajte správne modálne okno
+            modal.style.display = "block"; // Zobrazenie modálneho okna
+        }
+    });
+
+    // Zatvorenie modálneho okna
+    const modal = document.getElementById('thank-you-modal');
+    const closeButton = document.getElementById('close-button-thanks'); // Referencia na krížik
+
+    // Funkcia na zatvorenie modálneho okna
+    function closeModal() {
+        modal.style.display = "none"; // Skrytie modálneho okna
+    }
+
+    // Zatvorenie modálneho okna pri kliknutí na krížik
+    closeButton.addEventListener('click', function () {
+        closeModal(); // Zavolanie funkcie na zatvorenie
+    });
+
+    // Zatvorenie modálneho okna pri kliknutí mimo neho
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) { // Skontroluj, či sa kliklo na pozadie modálneho okna
+            closeModal(); // Zavolanie funkcie na zatvorenie
         }
     });
 
@@ -66,32 +91,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
-    // Hamburger menu a modálne okno
+    // Hamburger menu a modálne okno pre menu
     const hamburger = document.getElementById("hamburger-menu");
-    const modal = document.getElementById("menu-modal");
-    const closeButton = document.getElementById("close-button");
+    const menuModal = document.getElementById("menu-modal");
+    const closeButtonMenu = document.getElementById("close-button-menu"); // Uistite sa, že ide o správny krížik
     const menuLinks = document.querySelectorAll("#menu-modal .scroll-link");
 
     // Funkcia na otvorenie modálneho okna
     function openModal() {
-        modal.style.display = "block";
+        menuModal.style.display = "block";
     }
 
     // Funkcia na zatvorenie modálneho okna
-    function closeModal() {
-        modal.style.display = "none";
+    function closeModalMenu() {
+        menuModal.style.display = "none";
     }
 
     // Otvoriť modálne okno pri kliknutí na hamburger menu
     hamburger.addEventListener('click', openModal);
 
     // Zatvoriť modálne okno pri kliknutí na krížik
-    closeButton.addEventListener('click', closeModal);
+    closeButtonMenu.addEventListener('click', closeModalMenu);
 
     // Zatvoriť modálne okno pri kliknutí mimo neho
     window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            closeModal();
+        if (event.target === menuModal) {
+            closeModalMenu();
         }
     });
 
@@ -103,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
-                closeModal(); // Zatvor modálne okno pred scrollovaním
+                closeModalMenu(); // Zatvor modálne okno pred scrollovaním
                 window.scrollTo({
                     top: targetSection.offsetTop,
                     behavior: 'smooth'
@@ -120,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             hamburger.style.display = "none";
             document.querySelector('.navigation').style.display = "block";
-            closeModal(); // Zavrieť modálne okno ak sa zväčší obrazovka
+            closeModalMenu(); // Zavrieť modálne okno ak sa zväčší obrazovka
         }
     }
 
