@@ -840,6 +840,53 @@ form button:hover {
 }
 
 
+/* Štýlovanie modálneho okna */
+.modal {
+    display: none; /* Skryté ako predvolené */
+    position: fixed; /* Upevnené k oknu */
+    z-index: 10000; /* Nad všetkými ostatnými prvkami */
+    left: 0;
+    top: 0;
+    width: 100%; /* Celá šírka */
+    height: 100%; /* Celá výška */
+    overflow: auto; /* Možnosť posúvania, ak je obsah veľký */
+    background-color: rgba(0, 0, 0, 0.7); /* Polopriehľadné pozadie */
+}
+
+/* Obsah modálneho okna */
+.modal-content {
+    background-color: #fefefe; /* Pozadie obsahu */
+    margin: 15% auto; /* Umiestnenie v strede */
+    padding: 20px; /* Padding pre obsah */
+    border: 1px solid #888; /* Rámček */
+    width: 80%; /* Šírka modálneho okna */
+    height: 50%;
+    max-width: 500px; /* Maximálna šírka */
+    position: relative; /* Aby sme mohli absolútne pozicionovať krížik */
+}
+
+/* Tlačidlo na zatvorenie modálneho okna */
+.close-button-thanks {
+    color: #aaa; /* Farba */
+    position: absolute; /* Absolútne pozicionovanie */
+    top: 10px; /* Vzdialenosť od horného okraja */
+    right: 15px; /* Vzdialenosť od pravého okraja */
+    font-size: 28px; /* Veľkosť */
+    font-weight: bold; /* Tučné písmo */
+    cursor: pointer; /* Zmena kurzora */
+}
+
+.close-button-thanks:hover,
+.close-button-thanks:focus {
+    color: black; /* Zmena farby pri hover */
+    text-decoration: none; /* Bez podčiarknutia */
+}
+
+
+
+
+
+
 /* Footer */
 
 footer {
