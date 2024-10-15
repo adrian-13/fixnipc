@@ -751,14 +751,14 @@ section {
 
 /* Form */
 
-.contact {
+.contact-form {
     background-color: #e8f5e9; /* Svetlá farba pozadia pre formulár */ 
     padding: 1.875em 1.25em;
     text-align: center;
     margin-bottom: 3.125em;
 }
 
-.contact h2 {
+.contact-form h2 {
     margin-bottom: 1.875em;
     text-align: center;
     color: #2f572f; /* Tmavšia zelená pre nadpis */
