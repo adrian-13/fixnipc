@@ -297,15 +297,15 @@
             <button type="submit">Odoslať</button>
           </form>
            -->
-           <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true">
             <p>
-              <label>Vaše meno: <input type="text" name="name" id="name"/></label>
+              <label>Vaše meno: <input type="text" name="name" id="name" required /></label>
             </p>
             <p>
-              <label>Váš email: <input type="email" name="email" id="email"/></label>
+              <label>Váš email: <input type="email" name="email" id="email" required /></label>
             </p>
             <p>
-              <label>Správa pre nás: <textarea name="message" id="message"></textarea></label>
+              <label>Správa pre nás: <textarea name="message" id="message" rows="5" required ></textarea></label>
             </p>
             <p>
               <button type="submit">Send</button>
@@ -316,14 +316,15 @@
       </section>
       
       
-    <!-- Modálne okno pre ďakovnú správu -->
+    <!-- Modálne okno pre ďakovnú správu 
     <div id="thank-you-modal" class="modal">
         <div class="modal-content">
-            <span id="close-button-thanks" class="close-button-thanks">&times;</span> <!-- Krížik na zatvorenie -->
+            <span id="close-button-thanks" class="close-button-thanks">&times;</span> 
             <h2>Ďakujeme!</h2>
             <p>Vaša správa bola úspešne odoslaná. Čoskoro sa vám ozveme.</p>
         </div>
     </div>
+-->
 
     <footer>
         <div class="container">
