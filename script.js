@@ -15,6 +15,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Scrollovanie na kontaktný formulár a predvyplnenie správy
+    document.querySelectorAll('.service-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Zabrániť predvolenej akcii
+            const targetID = "contact"; // ID sekcie kontaktu
+            const targetSection = document.getElementById(targetID); // Získanie sekcie kontaktu
+
+            // Predvyplnenie správy do formulára
+            const message = this.getAttribute('data-message'); // Získanie správy z data atribútu
+            document.getElementById('message').value = message; // Nastavenie hodnoty do textového poľa
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth' // Hladké scrollovanie
+                });
+            }
+        });
+    });
+
     // Validácia emailu pri odosielaní formulára
     document.getElementById('contact').addEventListener('submit', function (event) {
         const emailInput = document.getElementById('email').value;
@@ -45,20 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: 'smooth' // Hladké scrollovanie
         });
     };
-
-    // Scrollovanie na sekciu pri kliknutí na tlačidlo s class="button"
-    document.querySelectorAll('.button').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault(); // Zabrániť predvolenej akcii
-            const targetID = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetID);
-
-            window.scrollTo({
-                top: targetSection.offsetTop,
-                behavior: 'smooth'
-            });
-        });
-    });
 
     // Hamburger menu a modálne okno
     const hamburger = document.getElementById("hamburger-menu");
@@ -94,11 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
-            const targetSection   
-    = document.getElementById(targetId);
+            const targetSection = document.getElementById(targetId);
 
-            if (targetSection)   
-    {
+            if (targetSection) {
                 closeModal(); // Zatvor modálne okno pred scrollovaním
                 window.scrollTo({
                     top: targetSection.offsetTop,
