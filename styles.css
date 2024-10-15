@@ -751,46 +751,49 @@ section {
 
 /* Form */
 
-.contact-form {
-    background-color: #e8f5e9; /* Svetlá farba pozadia pre formulár */ 
-    padding: 1.875em 1.25em;
+/* Štýl pre sekciu kontakt */
+#contact {
+    background-color: #e8f5e9; /* Svetlá zelená farba pre pozadie sekcie */
+    padding: 2em 1.5em; /* Priestor okolo obsahu sekcie */
     text-align: center;
     margin-bottom: 3.125em;
 }
 
-.contact-form h2 {
+#contact h2 {
     margin-bottom: 1.875em;
     text-align: center;
     color: #2f572f; /* Tmavšia zelená pre nadpis */
 }
 
+/* Formulár */
 form {
     display: flex;
-    display: -webkit-box; /* Staršie verzie Safari */
-    display: -webkit-flex; /* Pre Safari */
     flex-direction: column;
-    align-items: center; /* Centrovanie položiek */
+    align-items: center; /* Centrovanie formulára */
+    max-width: 30em; /* Maximálna šírka formulára */
+    margin: 0 auto; /* Centrovanie formulára na stránke */
 }
 
 form label {
-    margin-bottom: 0.625em; /* Zväčšenie medzery */
+    width: 100%;
+    margin-bottom: 0.625em; /* Zvýšenie medzery medzi popisom a poľom */
     font-weight: normal;
-    align-items: left;
-    text-align: left; /* Zarovnanie textu naľavo */
+    text-align: left; /* Zarovnanie popisov naľavo */
     color: #2e7d32; /* Farba popisu */
 }
 
 form input, form textarea {
-    width: 100%; /* Šírka vstupov */
-    max-width: 26.25em; /* Maximálna šírka pre väčšie obrazovky */
+    width: 100%; /* Polia majú zaberať celú šírku formulára */
     padding: 0.625em;
     margin-bottom: 1.25em;
     border: 0.0625em solid #bbb; /* Jemnejší okraj */
     border-radius: 0.3125em; /* Zaoblenie rohov */
+    font-size: 1em; /* Veľkosť písma pre lepšiu čitateľnosť */
 }
 
 form textarea {
     height: 9.375em; /* Výška textového poľa pre správu */
+    resize: vertical; /* Umožnenie vertikálnej zmeny veľkosti */
 }
 
 form input:focus, form textarea:focus {
@@ -798,26 +801,26 @@ form input:focus, form textarea:focus {
     outline: none; /* Odstránenie defaultného rámčeka */
 }
 
+/* Štýl pre tlačidlo */
 form button {
-    width: calc(100% + 1.25em); /* Zabezpečí, že tlačidlo bude širšie o extra 1.25em */
-    max-width: 27.5em; /* Zhodná šírka ako textové pole */
+    width: calc(100% + 1.625em);
     background-color: #4caf50; /* Zelená farba tlačidla */
     color: white;
     border: none;
-    padding: 0.75em 1.5625em; /* Padding pre zväčšenie tlačidla */
+    padding: 0.75em 1.5625em; /* Padding pre tlačidlo */
     border-radius: 0.3125em; /* Zaoblenie rohov */
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Prechod farby */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Prechod farby a animácia pri hoveri */
 }
 
 form button:hover {
     background-color: #388e3c; /* Tmavšia zelená pri najazdení myšou */
-    transform: scale(1.05); /* Jemné zväčšenie */
+    transform: scale(1.05); /* Jemné zväčšenie tlačidla */
 }
 
-form p {
+#contact p {
     font-size: 0.875em;
-    color: #888; /* Jemná farba pre informácie */
+    color: #888; /* Jemná farba pre dodatočné informácie */
 }
 
 
