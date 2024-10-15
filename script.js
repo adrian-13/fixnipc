@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Validácia emailu pri odosielaní formulára
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
+    document.getElementById('contact').addEventListener('submit', function (event) {
         const emailInput = document.getElementById('email').value;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex pre validáciu emailu
 
