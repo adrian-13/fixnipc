@@ -805,6 +805,10 @@ form input, form textarea {
     transition: border-color 0.3s ease;
 }
 
+form textarea {
+    height: 12.5em; /* Set desired height */
+}
+
 form input:focus, form textarea:focus {
     border-color: #4caf50;
     outline: none;
@@ -891,10 +895,6 @@ form button:hover {
     color: black; /* Zmena farby pri hover */
     text-decoration: none; /* Bez podčiarknutia */
 }
-
-
-
-
 
 
 /* Footer */
