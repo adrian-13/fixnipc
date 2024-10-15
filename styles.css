@@ -250,7 +250,7 @@ section {
     overflow: hidden; /* Skrytie prebytočnej časti obrázka */
     border-top-right-radius: 0.625em;
     border-bottom-right-radius: 0.625em;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Jemný tieň pre obrázok */
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1); /* Jemný tieň pre obrázok */
     transition: transform 0.3s ease-in-out; /* Prechod pre hover efekt */
     display: flex; /* Flexbox na rozšírenie obrázka */
     display: -webkit-box; /* Staršie verzie Safari */
@@ -342,50 +342,66 @@ section {
 
 
 /* Services */
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15.625em, 1fr)); /* Responzívne stĺpce */
-    gap: 0.875em;
-    margin: 1.875em 0;
+    gap: 0.875em; /* Priestor medzi položkami */
+    margin: 1.875em 0; /* Medzera nad a pod sekciou */
 }
 
 .service {
     background-color: #e8f5e9; /* Svetlozelená pre služby */
     padding: 1.5em; /* Mierne zvýšenie paddingu */
-    border-radius: 0.625em;
+    border-radius: 0.625em; /* Zaoblené rohy */
     box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Jemný tieň */
-    text-align: center;
+    text-align: center; /* Centrovanie textu */
+    display: flex; /* Umožňuje flexbox */
+    flex-direction: column; /* Uloženie obsahu vertikálne */
+    justify-content: space-between; /* Rozdelenie priestoru medzi položkami */
 }
 
 .service i {
-    font-size: 1.875em;
-    color: #388e3c;
+    font-size: 1.875em; /* Veľkosť ikony */
+    color: #388e3c; /* Farba ikony */
     margin-bottom: 1em; /* Zvýšenie medzery medzi ikonou a textom */
 }
 
 .services h2 {
-    text-align: center;
-    font-size: 1.75em;
+    text-align: center; /* Centrovanie nadpisu */
+    font-size: 1.75em; /* Veľkosť písma nadpisu */
     color: #2f572f; /* Tmavšia zelená pre nadpis */
 }
 
 .service h3 {
-    margin-bottom: 0.3125em;
+    margin-bottom: 0.3125em; /* Medzera pod názvom služby */
     color: #2f572f; /* Tmavšia zelená pre názov služby */
 }
 
 .service p {
-    font-size: 0.875em;
-    color: #2e7d32; /* Farba textu */
+    font-size: 0.875em; /* Veľkosť písma pre popis */
+    color: #2e7d32; /* Farba textu popisu */
 }
 
+/* Zmena pozadia pri hover */
 .service:hover {
     background-color: #c8e6c9; /* Zmena pozadia pri hover */
     transition: background-color 0.3s; /* Hladký prechod farby pozadia */
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); /* Pridanie tieňa pri hover */
 }
 
+/* Objednávací odkaz */
+.service-link {
+    margin-top: auto; /* Umiestni odkaz na koniec bloku */
+    padding: 5px 10px; /* Menší padding pre odkaz */
+    color: #4caf50; /* Zelená farba pre text odkazu */
+    text-decoration: none; /* Bez podčiarknutia */
+    transition: color 0.3s; /* Prechod farby */
+    margin-bottom: 1em; /* Medzera 1em od spodného okraja */
+}
+
+.service-link:hover {
+    color: #388e3c; /* Tmavšia zelená pri hover */
+}
 
 
 /* Process Section */
