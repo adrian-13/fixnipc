@@ -270,15 +270,14 @@
         </div>
     </section>
 
-      <section id="contact" class="contact-form">
+      <section id="contact" class="contact">
         <div class="container">
             <h2>Kontaktujte nás</h2>
 
-            <!-- Starý formulár
-            <form id="contact" name="contact" method="POST" netlify>
+            <!-- 
+            <form id="contact-form" name="contact" method="POST" netlify>
                 <input type="hidden" name="form-name" value="contact">
-                
-                
+
                 <label for="name">Vaše meno:</label>
                 <input type="text" id="name" name="name" placeholder="Zadajte svoje meno" required>
             
@@ -287,23 +286,25 @@
             
                 <label for="message">Vaša správa:</label>
                 <textarea id="message" name="message" rows="5" placeholder="Popíšte problém" required></textarea>
-            
+                        
                 <button type="submit">Odoslať</button>
             </form>
             -->
+
             <form name="contact" method="POST" data-netlify="true">
+                <h2>Contact Form</h2>
                 <form method="post" name="Contact Form">
                 <p>
                     <label for="name">Vaše meno:</label>
-                    <input type="text" name="name" id="name" placeholder="Zadajte svoje meno" required>
+                    <input type="text" name="name" id="name">
                 </p>
                 <p>
                     <label for="email">Váš email:</label>
-                    <input type="email" name="email" id="email" placeholder="Zadajte svoj email" required>
+                    <input type="email" name="email" id="email">
                 </p>
                 <p>
-                    <label for="comments">Vaša správa:</label><br/>
-                    <textarea name="comments" id="comments" rows="5" placeholder="Popíšte problém" required></textarea>
+                    <label for="comments">Správa pre nás:</label><br/>
+                    <textarea name="comments" id="comments"></textarea>
                 </p>
                 <p>
                     <input type="submit">
