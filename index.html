@@ -282,6 +282,7 @@
         <div class="container">
             <h2>Kontaktujte nás</h2>
             <form name="contact" method="POST" data-netlify="true" action="/thank-you">
+                <input type="hidden" name="form-name" value="contact"> <!-- Skrytý input -->
                 <label for="name">Meno:</label><br>
                 <input type="text" id="name" name="name" required><br>
               
