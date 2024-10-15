@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeModal() {
         modal.style.display = "none"; // Skrytie modálneho okna
     }
-
+/* 
     // Zatvorenie modálneho okna pri kliknutí na krížik
     closeButton.addEventListener('click', function () {
         closeModal(); // Zavolanie funkcie na zatvorenie
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModal(); // Zavolanie funkcie na zatvorenie
         }
     });
-
+*/
     // Získanie tlačidla pre návrat späť na vrchol stránky
     const scrollToTopButton = document.getElementById('scrollToTop');
 
@@ -110,8 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Otvoriť modálne okno pri kliknutí na hamburger menu
     hamburger.addEventListener('click', openModal);
 
+    /*
     // Zatvoriť modálne okno pri kliknutí na krížik
     closeButtonMenu.addEventListener('click', closeModalMenu);
+
 
     // Zatvoriť modálne okno pri kliknutí mimo neho
     window.addEventListener('click', function(event) {
@@ -119,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModalMenu();
         }
     });
+    */
 
     // Obsluha kliknutia na položky menu
     menuLinks.forEach(link => {
