@@ -281,7 +281,7 @@
       <section id="contact" class="contact">
         <div class="container">
             <h2>Kontaktujte nás</h2>
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true" action="/thank-you">
                 <label for="name">Meno:</label><br>
                 <input type="text" id="name" name="name" required><br>
               
@@ -295,6 +295,14 @@
               </form>
         </div>
     </section>
+    <!-- Modálne okno pre ďakovnú správu -->
+    <div id="thank-you-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-button-thanks" class="close-button-thanks">&times;</span> <!-- Krížik na zatvorenie -->
+            <h2>Ďakujeme!</h2>
+            <p>Vaša správa bola úspešne odoslaná. Čoskoro sa vám ozveme.</p>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
