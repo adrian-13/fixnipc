@@ -79,11 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Funkcia na otvorenie modálneho okna
     function openModal() {
         menuModal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Zastaviť scrollovanie
     }
 
     // Funkcia na zatvorenie modálneho okna
     function closeModalMenu() {
         menuModal.style.display = "none";
+        document.body.style.overflow = "auto"; // Obnoviť scrollovanie
     }
 
     // Otvoriť modálne okno pri kliknutí na hamburger menu
