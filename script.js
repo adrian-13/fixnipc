@@ -50,27 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Zatvorenie modálneho okna
-    const modal = document.getElementById('thank-you-modal');
-    const closeButton = document.getElementById('close-button-thanks'); // Referencia na krížik
-
-    // Funkcia na zatvorenie modálneho okna
-    function closeModal() {
-        modal.style.display = "none"; // Skrytie modálneho okna
-    }
-/* 
-    // Zatvorenie modálneho okna pri kliknutí na krížik
-    closeButton.addEventListener('click', function () {
-        closeModal(); // Zavolanie funkcie na zatvorenie
-    });
-
-    // Zatvorenie modálneho okna pri kliknutí mimo neho
-    window.addEventListener('click', function (event) {
-        if (event.target === modal) { // Skontroluj, či sa kliklo na pozadie modálneho okna
-            closeModal(); // Zavolanie funkcie na zatvorenie
-        }
-    });
-*/
     // Získanie tlačidla pre návrat späť na vrchol stránky
     const scrollToTopButton = document.getElementById('scrollToTop');
 
@@ -94,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hamburger menu a modálne okno pre menu
     const hamburger = document.getElementById("hamburger-menu");
     const menuModal = document.getElementById("menu-modal");
-    const closeButtonMenu = document.getElementById("close-button-menu"); // Uistite sa, že ide o správny krížik
+    const closeButtonMenu = document.getElementById("close-button"); // Uistite sa, že ide o správny krížik
     const menuLinks = document.querySelectorAll("#menu-modal .scroll-link");
 
     // Funkcia na otvorenie modálneho okna
@@ -110,10 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Otvoriť modálne okno pri kliknutí na hamburger menu
     hamburger.addEventListener('click', openModal);
 
-    /*
     // Zatvoriť modálne okno pri kliknutí na krížik
     closeButtonMenu.addEventListener('click', closeModalMenu);
-
 
     // Zatvoriť modálne okno pri kliknutí mimo neho
     window.addEventListener('click', function(event) {
@@ -121,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModalMenu();
         }
     });
-    */
 
     // Obsluha kliknutia na položky menu
     menuLinks.forEach(link => {
